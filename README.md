@@ -27,6 +27,7 @@ Esse não é o único lugar em que você pode encontrar tutoriais ou editoriais 
     - A questão da inconsistência é muito importante. Sites como o NOIC (lista abaixo) têm análises de anos muito restrita, o que restringe bastante o quanto se pode aprender com os problemas passados da OBI.
  
 Mesmo assim, visto que o repositório ainda está com poucos problemas e que fontes alternativas são sempre bem-vindas, aqui estão alguns links onde podem ser lidos editoriais e análises de problemas da OBI:
-- http://noic.com.br/
+- [NOIC](http://noic.com.br/)
+- [Servidor do discord do Neps Academy](https://discord.gg/jdQgWed)
 
 (sugestões de mais referências que podem ser inseridas aqui são bem-vindas)
