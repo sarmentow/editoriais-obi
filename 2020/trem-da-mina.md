@@ -29,7 +29,7 @@ Agora, com todas as informações salvas, podemos responder as queries. A ideia 
 
 É válido ressaltar que caso o ciclo tenha tamanho menor do que o do trem dado na query, utilizá-lo não nos dará um caminho válido, portanto devemos ignorá-lo.  
 
-Segue o [código da solução comentada](../codigo/trem-da-mina.cpp) para melhor compreensão. 
+Segue o [código da solução comentada](https://github.com/sarmentow/editoriais-obi/blob/main/2020/codigo/trem-da-mina.cpp) para melhor compreensão. 
  
  
 ## Agradecimentos
