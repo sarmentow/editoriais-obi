@@ -75,7 +75,7 @@ E os casos especiais:
 
 Podemos calcular o alcance de deslize de qualquer uma das peças como sendo `colunas do tabuleiro - numero de peças da fileira`
 
-Segue [código da solução comentado](../codigo/quebra-cabeca.cpp) para compreender a implementação. Eu implementei essa DP com uma função recursiva. Também seria possível implementar uma DP bottom-up, mas eu não penso dessa maneira normalmente.
+Segue [código da solução comentado](https://github.com/sarmentow/editoriais-obi/tree/main/2020/codigo) para compreender a implementação. Eu implementei essa DP com uma função recursiva. Também seria possível implementar uma DP bottom-up, mas eu não penso dessa maneira normalmente.
 
 ## Agradecimentos e referências
 
@@ -83,4 +83,4 @@ Segue [código da solução comentado](../codigo/quebra-cabeca.cpp) para compree
 
 - [edit distance](https://cses.fi/problemset/task/1639)
 
-- Se você quiser contribuir escrevendo editoriais, toda ajuda é bem-vinda! Informações sobre como contribuir estão no [README](../../README.md) do repositório.
+- Se você quiser contribuir escrevendo editoriais, toda ajuda é bem-vinda! Informações sobre como contribuir estão no [README](https://github.com/sarmentow/editoriais-obi) do repositório.
