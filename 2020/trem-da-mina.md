@@ -11,7 +11,7 @@ Uma informação que cabe ressaltar é que no enunciado é dito que cada vértic
 
 Inicialmente, vamos tratar o grafo dado na questão para transformá-lo em uma árvore, guardando algumas informações sobre o ciclo, para isso utilizaremos a DFS Lowlink. Na imagem abaixo temos o grafo original dado na própria sample. 
 
-![Grafo](../imagens/trem-da-mina-grafo.png)
+![Grafo](https://github.com/sarmentow/editoriais-obi/blob/main/2020/imagens/trem-da-mina-grafo.png?raw=true)
 
 
 
