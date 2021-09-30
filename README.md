@@ -21,7 +21,7 @@ Esse não é o único lugar em que você pode encontrar tutoriais ou editoriais 
 3. Código pouco comentado (às vezes)
 4. Poucos problemas
 
-- Algumas observações que é importante de serem feitas:
+- Algumas observações que são importante de serem feitas:
     - Formalismo matemático pode ser necessário em alguns problemas, especialmente os que envolvem provas para certas afirmações, mas há problemas em que uma explicação por exemplificação e intuição representa o processo real de resolver um problema muito mais fielmente do que puro formalismo.
     - Além disso, o formalismo matemático pode tornar a leitura um pouco difícil e descontínua.
     - A questão da inconsistência é muito importante. Sites como o NOIC (lista abaixo) têm análises de anos muito restrita, o que restringe bastante o quanto se pode aprender com os problemas passados da OBI.

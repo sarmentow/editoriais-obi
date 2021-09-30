@@ -1,5 +1,6 @@
 # Quebra-cabeças
 Assuntos: DP
+
 [Problema](https://olimpiada.ic.unicamp.br/pratique/p2/2020/f2/quebra/)
 
 
@@ -13,19 +14,21 @@ Primeiramente, é importante reconhecer que esse é um problema de DP, então pr
 
 Podemos pensar no estado como sendo definido então por 2 variáveis `i` e `j`, na qual `dp(i, j)` representa a maior pontuação possível para todas as escolhas que podemos tomar (as transições) a partir das peças `i` e `j`. 
 
-Nesse caso dp(0, 0) seria a resposta para o problema pois corresponde à maior pontuação possível que pode ser conseguida considerando todas as possibilidades a partir das primeiras peças de cada fileira do tabuleiro.
+Nesse caso `dp(0, 0)` seria a resposta para o problema pois corresponde à maior pontuação possível que pode ser conseguida considerando todas as possibilidades a partir das primeiras peças de cada fileira do tabuleiro.
 
-Agora é preciso definir as transições de estado, ou seja, como cada escolha afeta a resposta de um estado. Então para um estado qualquer, a resposta será o máximo entre as 3 escolhas que foram explicadas acima. Transformando em código cada escolha e suas implicações na resposta do problema temos que dp(i, j) = máximo entre (supondo que as peças de cada fileira estão guardadas em um array `peças` no qual `peças[0][i]` corresponde à peça `i` da primeira fileira e `peças[1][j]` corresponde à peça j da segunda fileira):
+Agora é preciso definir as transições de estado, ou seja, como cada escolha afeta a resposta de um estado. Então para um estado qualquer, a resposta será o máximo entre as 3 escolhas que foram explicadas acima. Transformando em código cada escolha e suas implicações na resposta do problema temos que `dp(i, j)` = máximo entre (supondo que as peças de cada fileira estão guardadas em um array `peças` no qual `peças[0][i]` corresponde à peça `i` da primeira fileira e `peças[1][j]` corresponde à peça j da segunda fileira):
 
 1. Deixar as peças `i` e `j` alinhadas = `peças[0][i] * peças[1][j] + dp(i + 1, j + 1)`
-2. Mover a peça `i` para a direita = `dp(i, j + 1)`
-3. Mover a peça `j` para a direita = `dp(i + 1, j)`
+2. Mover a peça `i` para a direita e deixar a peça `j` sozinha = `dp(i, j + 1)`
+3. Mover a peça `j` para a direita e deixar a peça `i` sozinha = `dp(i + 1, j)`
 
-Os casos óbvios são os casos em que já esgotamos o número de peças que podemos analisar, e nesse caso retornamos apenas 0, pois nesse caso o que ocorre é que só existe uma opção: deixar a peça numa coluna sozinha. Em código isso fica (assumindo que `a` seja o número de peças na primeira fileira e `b` seja o número de peças na segunda fileira):
+Também precisamos pensar nos casos especiais.
+
+Os casos óbvios são os casos em que já esgotamos o número de peças que podemos analisar, e nesse caso retornamos apenas 0, pois nesse caso o que ocorre é que ou esgotamos tanto as peças de cima como as de baixo, ou esgotamos uma das duas. Para ambas situações, a única jogada a se fazer é parar de jogar. Em código isso fica (assumindo que `a` seja o número de peças na primeira fileira e `b` seja o número de peças na segunda fileira):
 
 ```cpp
 if (i >= a or j >= b) return 0;
-``` 
+```
 
 Porém isso não é suficiente. Precisamos também levar em conta que o tabuleiro pode não permitir certas ações devido à quantidade limitada de colunas. Por exemplo, imagine o seguinte caso:
 | 1 | 4 | 3 |    |   |
@@ -43,9 +46,11 @@ Vamos supor que eu comece com o seguinte tabuleiro:
 |----|---|---|---|---|
 | -3 | 5 | 2 |  3 | 2 |
 
-Vamos supor que estamos dentro da função dp(0, 0). Então temos as 3 opções que já foram faladas acima:
+Estamos dentro da função `dp(0, 0)`. Então temos as 3 opções que já foram faladas acima:
 
-No caso de deixar as peças 1 e -3 no lugar, teremos 1 * -3 + dp(i + 1, j + 1)
+No caso de deixar as peças 1 e -3 no lugar, teremos `1 * -3 + dp(0 + 1, 0 + 1)`
+
+No caso, o tabuleiro pode ser representado dessa forma na `dp(1, 1)` (as setas servem para mostrar que as peças sendo analisadas estariam alinhadas)
 
 |   | ↓ |  |   |   |
 |----|---|---|---|---|
@@ -61,13 +66,13 @@ Agora que você entendeu como que estamos visualizando, vou ignorar a possibilid
 | -3 | 5 | 2 | 3  | 2  |
 |  ↑    |  |   || |
 
-Não podemos deslizar o -3 para essa coluna. Então a partir disso a sua intuição deveria dizer que podemos, a cada transição, além de acompanhar o i e o j das peças que estamos comparando, também podemos acompanhar a coluna do tabuleiro em que elas estão. Vamos chamar a coluna atual do tabuleiro de `k`. Se voltarmos às transições de estado que discutimos, ao invés de termos as definições iniciais, podemos pensar da seguinte maneira:
+Não podemos deslizar o -3 para essa coluna. Então a partir disso a sua intuição deveria dizer que podemos, a cada transição, além de acompanhar o `i` e o `j` das peças que estamos comparando, também podemos acompanhar a coluna do tabuleiro em que elas estão. Vamos chamar a coluna atual do tabuleiro de `k`. Se voltarmos às transições de estado que discutimos, ao invés de termos as definições iniciais, podemos pensar da seguinte maneira:
 
-dp(i, j, k) é a máxima quantidade de pontos entre todas as opções de movimento possíveis entre as peças i e j quando elas estão na casa k.
+`dp(i, j, k)` é a máxima quantidade de pontos entre todas as opções de movimento possíveis entre as peças `i` e `j` quando elas estão na casa `k`.
 
-1. Deixar como está = peças[0][i] * peças[1][j] + dp(i + 1, j + 1, k + 1)
-2. Deslizar a peça de cima para a direita = dp(i, j + 1, k + 1)
-3. Deslizar a peça de baixo para a direita = dp(i + 1, j, k + 1)
+1. Deixar como está = `peças[0][i] * peças[1][j] + dp(i + 1, j + 1, k + 1)`
+2. Deslizar a peça de cima para a direita = `dp(i, j + 1, k + 1)`
+3. Deslizar a peça de baixo para a direita = `dp(i + 1, j, k + 1)`
 
 E os casos especiais:
 1. Se já fizemos escolhas para todas as peças da primeira ou da segunda fileira, retornar 0 pois não há mais combinações a serem feitas
@@ -75,7 +80,13 @@ E os casos especiais:
 
 Podemos calcular o alcance de deslize de qualquer uma das peças como sendo `colunas do tabuleiro - numero de peças da fileira`
 
-Segue [código da solução comentado](https://github.com/sarmentow/editoriais-obi/tree/main/2020/codigo) para compreender a implementação. Eu implementei essa DP com uma função recursiva. Também seria possível implementar uma DP bottom-up, mas eu não penso dessa maneira normalmente.
+Em código, esses casos seriam algo como (assumindo que `a` seja o número de peças na primeira fileira e `b` seja o número de peças na segunda coluna):
+
+```cpp
+if (K > i + (N - a) or K > j + (N - b)) return -inf;
+```
+
+Segue [código da solução comentado](https://github.com/sarmentow/editoriais-obi/blob/main/2020/codigo/quebra-cabeca.cpp) para compreender a implementação. Eu implementei essa DP com uma função recursiva. Também seria possível implementar uma DP bottom-up, mas eu não penso dessa maneira normalmente.
 
 ## Agradecimentos e referências
 
