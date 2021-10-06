@@ -31,3 +31,22 @@ Mesmo assim, visto que o repositório ainda está com poucos problemas e que fon
 - [Servidor do discord do Neps Academy](https://discord.gg/jdQgWed)
 
 (sugestões de mais referências que podem ser inseridas aqui são bem-vindas)
+
+## Como avaliar seu código
+Caso você não consiga avaliar seu código usando o site da OBI, existem outras opções:
+- [Neps Academy](neps.academy) (conta gratuita)
+- [corretor.py](https://github.com/sarmentow/editoriais-obi/blob/main/corretor.py) é um script de python que corrige seu código pra você. Atualmente, o corretor não consegue te dizer se seu código excedeu o tempo limite, apenas se ele está dando as respostas corretas, então caso esteja demorando muito para corrigir, é sinal de que seu código está excedendo o tempo limite e você precisa cancelar a execução do script (usando CTRL-C). Para usar o corretor, leia a seção abaixo.
+
+### corretor.py
+Caso seu código esteja em python:
+```
+python corretor.py ARQUIVO_DO_CÓDIGO PASTA_DO_GABARITO
+```
+Caso seu código esteja em C++:
+```
+python corretor.py --lang=cpp ARQUIVO_DO_CÓDIGO_COMPILADO PASTA_DO_GABARITO
+```
+
+Para conseguir a pasta do gabarito, é necessário baixar o arquivo compactado [no site da OBI](https://olimpiada.ic.unicamp.br/passadas/) e extraí-lo.
+
+Se sua solução estiver dando respostas erradas, o corretor vai mostrar os casos em que as respostas não batem. Caso as respostas estejam corretas, não será printado nada.
