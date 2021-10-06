@@ -38,6 +38,8 @@ Caso você não consiga avaliar seu código usando o site da OBI, existem outras
 - [corretor.py](https://github.com/sarmentow/editoriais-obi/blob/main/corretor.py) é um script de python que corrige seu código pra você. Atualmente, o corretor não consegue te dizer se seu código excedeu o tempo limite, apenas se ele está dando as respostas corretas, então caso esteja demorando muito para corrigir, é sinal de que seu código está excedendo o tempo limite e você precisa cancelar a execução do script (usando CTRL-C). Para usar o corretor, leia a seção abaixo.
 
 ### corretor.py
+Primeiro, é necessário instalar o pacote [Click](https://click.palletsprojects.com/en/8.0.x/) utilizando `pip install click`
+
 Caso seu código esteja em python:
 ```
 python corretor.py ARQUIVO_DO_CÓDIGO PASTA_DO_GABARITO
