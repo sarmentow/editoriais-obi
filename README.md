@@ -3,6 +3,8 @@ Editoriais e soluções para problemas da Olimpíada Brasileira de Informática
 
 A maior parte do código está comentado, então mesmo quando ainda não foi escrito um editorial dedicado ao problema, é provável que o assunto relacionado ao problema e uma breve descrição da solução esteja no código.
 
+**Para pedir a resolução de um problema, abra um issue.**
+
 ## Por que esse repositório existe?
 Sim, já existem muitos repositórios com soluções para os problemas da OBI. Porém, quase todos têm apenas código e não apresentam editoriais ou comentários acerca dos problemas.
 
