@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import click
+import time
 import os
 from subprocess import call
 
@@ -9,8 +10,9 @@ splitext = os.path.splitext
 @click.command()
 @click.argument('script', type=click.Path(exists=True))
 @click.argument('folder', type=click.Path(exists=True))
-@click.option('--lang', default="python") 
-def corretor(script, folder, lang):
+@click.option('--lang', default="cpp") 
+@click.option('--debug', default=True)
+def corretor(script, folder, lang, debug):
     for root, dirs, files in os.walk(folder):
         if root != folder:
             solutions = [f for f in files if '.sol' in f]
@@ -24,7 +26,16 @@ def corretor(script, folder, lang):
                 if lang == "python":
                     call(f'cat {inp} | python {script} | diff {sol} -', shell=True)
                 elif lang == "cpp":
+                    if debug:
+                        print(inp)
+                      #  print("Output:")
+                      #  call(f'cat {inp} | {script}', shell=True)
+                      #  print("Answer:")
+                      #  call(f'cat {sol}', shell=True)
                     call(f'cat {inp} | {script} | diff {sol} -', shell=True)
+                    if debug:
+                        print()
+                        time.sleep(.1)
                 
                 
 if __name__ == "__main__":

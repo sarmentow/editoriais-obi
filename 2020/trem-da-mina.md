@@ -9,6 +9,8 @@ Uma informação que cabe ressaltar é que no enunciado é dito que cada vértic
 
 É importante ressaltar que existem várias maneiras de resolver o problema apresentado. No editorial iremos tratar o problema utilizando [DFS Lowlink](https://codeforces.com/blog/entry/68138)  e [Dijkstra](https://noic.com.br/materiais-informatica/curso/graphs-03/).
 
+(EDIT: também há uma solução que não necessita de DFS Lowlink. A pasta código também tem essa solução comentada)
+
 Inicialmente, vamos tratar o grafo dado na questão para transformá-lo em uma árvore, guardando algumas informações sobre o ciclo, para isso utilizaremos a DFS Lowlink. Na imagem abaixo temos o grafo original dado na própria sample. 
 
 ![Grafo](https://github.com/sarmentow/editoriais-obi/blob/main/2020/imagens/trem-da-mina-grafo.png?raw=true)

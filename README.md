@@ -1,7 +1,11 @@
 # Editoriais OBI
 Editoriais e soluções para problemas da Olimpíada Brasileira de Informática
 
+A maior parte do código está comentado, então mesmo quando ainda não foi escrito um editorial dedicado ao problema, é provável que o assunto relacionado ao problema e uma breve descrição da solução esteja no código.
+
 ## Por que esse repositório existe?
+Sim, já existem muitos repositórios com soluções para os problemas da OBI. Porém, quase todos têm apenas código e não apresentam editoriais ou comentários acerca dos problemas.
+
 Enquanto eu estudava pra OBI eu tive muita dificuldade em achar editoriais dos problemas de anos passados e isso foi um obstáculo enorme na minha aprendizagem. A UNICAMP disponibiliza o código para todas os problemas, sim, mas código de programação de competitiva não é muito legível ou didático.
 
 Por conta disso, eu tive que ir atrás de comunidades com pessoas que pudessem me ajudar, e eu sinto que não deveria ter sido tão difícil conseguir essas respostas, embora essa busca tenha tido seu lado positivo (de achar uma comunidade de programação competitiva com muitas pessoas das quais eu posso aprender muito). 
@@ -23,7 +27,7 @@ Esse não é o único lugar em que você pode encontrar tutoriais ou editoriais 
 
 - Algumas observações que são importante de serem feitas:
     - Formalismo matemático pode ser necessário em alguns problemas, especialmente os que envolvem provas para certas afirmações, mas há problemas em que uma explicação por exemplificação e intuição representa o processo real de resolver um problema muito mais fielmente do que puro formalismo.
-    - Além disso, o formalismo matemático pode tornar a leitura um pouco difícil e descontínua.
+    - O formalismo matemático pode tornar a leitura um pouco difícil e descontínua.
     - A questão da inconsistência é muito importante. Sites como o NOIC (lista abaixo) têm análises de anos muito restrita, o que restringe bastante o quanto se pode aprender com os problemas passados da OBI.
  
 Mesmo assim, visto que o repositório ainda está com poucos problemas e que fontes alternativas são sempre bem-vindas, aqui estão alguns links onde podem ser lidos editoriais e análises de problemas da OBI:
@@ -42,7 +46,7 @@ Primeiro, é necessário instalar o pacote [Click](https://click.palletsprojects
 
 Caso seu código esteja em python:
 ```
-python corretor.py ARQUIVO_DO_CÓDIGO PASTA_DO_GABARITO
+python corretor.py --lang=python ARQUIVO_DO_CÓDIGO PASTA_DO_GABARITO
 ```
 Caso seu código esteja em C++:
 ```
