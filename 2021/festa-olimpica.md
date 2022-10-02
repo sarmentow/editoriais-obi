@@ -1,5 +1,7 @@
 # Festa Olímpica
 
+(Esse editorial ainda está em construção)
+
 Esse problema pode fazer parecer que é necessário a utilização de algum algoritmo para encontrar rapidamente os múltiplos do divisor de cada turno entre 1 e N, mas existe um jeito mais intuitivo de pensar sobre esse problema.
 
 O que deveria sugerir essa ideia que vou explicar é essa parte do enunciado: "você deve listar apenas os 10.000 primeiros (ou seja, os com menores números) convidados".
